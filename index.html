@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+<title>MSS CSE Complaint System | Home</title>
 <style>
 * {box-sizing: border-box;}
-body {font-family: Verdana, sans-serif; margin: 0; padding: 0;}
+body {font-family: Verdana, sans-serif; margin: 0; padding: 0; background: #f5f5f5;}
 .mySlides {display: none;}
 img {vertical-align: middle; max-width: 100%; height: auto;}
 
@@ -30,7 +30,7 @@ img {vertical-align: middle; max-width: 100%; height: auto;}
   text-align: center;
 }
 
-/* Number text (1/3 etc) */
+/* Number text */
 .numbertext {
   color: #f2f2f2;
   font-size: 12px;
@@ -39,7 +39,7 @@ img {vertical-align: middle; max-width: 100%; height: auto;}
   top: 0;
 }
 
-/* The dots/bullets/indicators */
+/* Dots */
 .dot {
   height: 15px;
   width: 15px;
@@ -48,6 +48,7 @@ img {vertical-align: middle; max-width: 100%; height: auto;}
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
+  cursor: pointer;
 }
 
 .active {
@@ -56,15 +57,8 @@ img {vertical-align: middle; max-width: 100%; height: auto;}
 
 /* Fading animation */
 .fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
   animation-name: fade;
   animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
 }
 
 @keyframes fade {
@@ -72,7 +66,7 @@ img {vertical-align: middle; max-width: 100%; height: auto;}
   to {opacity: 1}
 }
 
-/* Navbar Styles - MOBILE FRIENDLY */
+/* Navbar - Mobile friendly */
 .navbar {
     overflow-x: auto;
     overflow-y: hidden;
@@ -81,19 +75,27 @@ img {vertical-align: middle; max-width: 100%; height: auto;}
     width: 100%;
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .navbar a {
     font-size: 14px;
     color: white;
     text-align: center;
-    padding: 12px 16px;
+    padding: 14px 20px;
     text-decoration: none;
     display: inline-block;
     float: none;
+    transition: 0.3s;
+    font-weight: 500;
 }
 
-/* Header Styles - MOBILE FRIENDLY */
+.navbar a:hover {
+    background-color: #0033cc;
+    color: white;
+}
+
+/* Header Styles */
 .header {
   overflow: hidden;
   background-color: #ffdb4d;
@@ -102,37 +104,15 @@ img {vertical-align: middle; max-width: 100%; height: auto;}
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .header img {
   max-width: 120px;
   height: auto;
-}
-
-.header a {
-  float: left;
-  color: black;
-  text-align: center;
-  padding: 12px;
-  text-decoration: none;
-  font-size: 18px; 
-  line-height: 25px;
-  border-radius: 4px;
-}
-
-.header a.logo {
-  font-size: 25px;
-  font-weight: bold;
-}
-
-.header a:hover {
-  background-color: white;
-  color: black;
-}
-
-.header a.active {
-  background-color: white;
-  color: white;
+  border-radius: 50%;
+  background: white;
+  padding: 5px;
 }
 
 .header-right {
@@ -142,13 +122,14 @@ img {vertical-align: middle; max-width: 100%; height: auto;}
 
 .header1 {
   font-size: 180%;
-  font-family: comic sans ms;
+  font-family: 'comic sans ms', cursive;
+  font-weight: bold;
 }
 
-/* FIXED MARQUEE - Slower and readable */
 .header1 marquee {
   width: 100% !important;
   white-space: nowrap;
+  color: #002766;
 }
 
 /* Text block for slide */
@@ -156,256 +137,305 @@ img {vertical-align: middle; max-width: 100%; height: auto;}
   position: absolute;
   bottom: 20px;
   right: 20px;
-  background-color: black;
+  background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(0,0,0,0.6));
   color: white;
   padding-left: 15px;
   padding-right: 15px;
-  font-size: 12px;
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
 }
 
-.text-block h4 {
-  margin: 5px 0;
-}
-
-.text-block p {
-  margin: 5px 0;
-}
-
-/* Three column layout - responsive */
-.column {
-  float: left;
-  width: 100%;
-  padding: 10px;
-  height: auto;
-}
-
-@media (min-width: 768px) {
-  .column {
-    width: 33.33%;
-    height: 300px;
-  }
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* NEW STYLES FOR CENTERING THE BOTTOM SECTION */
+/* College Info Section (shifted below complaint button) */
 .row-centered {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   margin: 0;
-  padding: 20px 15px;
-  background-color: transparent;
+  padding: 30px 15px 40px;
+  background: linear-gradient(135deg, #f0f4ff, #e8edf8);
 }
 
 .center-col {
-  float: none !important;
-  margin: 0 auto !important;
-  background-color: #001366;
+  background: linear-gradient(135deg, #001366, #001a4d);
   width: 100% !important;
-  max-width: 800px;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  max-width: 850px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
   text-align: center;
   color: white;
-  padding: 20px;
+  padding: 25px;
+  transition: transform 0.3s;
+}
+
+.center-col:hover {
+  transform: translateY(-5px);
 }
 
 .center-col h2 {
-  color: white;
-  font-size: 1.5em;
+  font-size: 1.6em;
   margin: 10px 0;
+  letter-spacing: 1px;
 }
 
 .center-col p {
-  color: white;
-  margin: 10px 0;
-  line-height: 1.6;
+  font-size: 1em;
+  line-height: 1.7;
 }
 
-/* Responsive Styles for all screen sizes */
-@media (max-width: 768px) {
-  .center-col {
-    width: 100% !important;
-    padding: 15px;
-  }
-  
-  .center-col h2 {
-    font-size: 1.2em;
-  }
-  
-  .center-col p {
-    font-size: 0.9em;
-  }
-  
-  .navbar a {
+/* ========== COMPLAINT BUTTON & FORM SECTION (NEW) ========== */
+.complaint-section {
+    max-width: 1000px;
+    margin: 40px auto 30px;
+    padding: 0 20px;
+}
+
+.complaint-btn-wrapper {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.open-form-btn {
+    background: linear-gradient(135deg, #dc3545, #c82333);
+    color: white;
+    border: none;
+    padding: 16px 38px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(220,53,69,0.4);
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    letter-spacing: 1px;
+}
+
+.open-form-btn i {
+    font-size: 1.5rem;
+}
+
+.open-form-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(220,53,69,0.5);
+    background: linear-gradient(135deg, #c82333, #a71d2a);
+}
+
+/* Modal / Popup Form */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.75);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(4px);
+    padding: 20px;
+}
+
+.modal-content {
+    background: white;
+    max-width: 550px;
+    width: 100%;
+    border-radius: 28px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    animation: modalFadeIn 0.3s;
+    overflow: hidden;
+}
+
+@keyframes modalFadeIn {
+    from {transform: scale(0.9); opacity: 0;}
+    to {transform: scale(1); opacity: 1;}
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #001f66, #001a4d);
+    color: white;
+    padding: 20px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.close-modal {
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: white;
+    transition: 0.2s;
+}
+
+.close-modal:hover {
+    transform: scale(1.1);
+    color: #ffcccc;
+}
+
+.complaint-form {
+    padding: 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #1e2a47;
+    font-size: 0.95rem;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 2px solid #e2e8f0;
+    border-radius: 16px;
+    font-size: 0.95rem;
+    transition: 0.2s;
+    font-family: inherit;
+}
+
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus {
+    border-color: #001f66;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0,31,102,0.1);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.submit-complaint {
+    background: linear-gradient(135deg, #28a745, #1e7e34);
+    color: white;
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 40px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.submit-complaint:hover {
+    transform: scale(1.01);
+    background: linear-gradient(135deg, #1e7e34, #155d27);
+}
+
+.form-note {
+    background: #f8f9fa;
+    padding: 12px;
+    border-radius: 16px;
+    margin-top: 18px;
     font-size: 12px;
-    padding: 10px 12px;
-  }
-  
-  .header1 {
-    font-size: 120%;
-  }
-  
-  .text {
-    font-size: 10px;
-    bottom: 4px;
-  }
-  
-  .numbertext {
-    font-size: 8px;
-  }
-  
-  .dot {
-    height: 10px;
-    width: 10px;
-    margin: 0 2px;
-  }
+    color: #495057;
+    text-align: center;
+    border-left: 4px solid #001f66;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar a { font-size: 12px; padding: 10px 12px; }
+    .header1 { font-size: 120%; }
+    .center-col h2 { font-size: 1.2em; }
+    .center-col p { font-size: 0.9em; }
+    .open-form-btn { padding: 12px 25px; font-size: 1.1rem; }
+    .modal-header h3 { font-size: 1.3rem; }
 }
 
 @media (max-width: 480px) {
-  .header {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .header-right {
-    text-align: center;
-    margin-top: 5px;
-  }
-  
-  .header1 {
-    font-size: 100%;
-  }
-  
-  .navbar a {
-    font-size: 11px;
-    padding: 8px 10px;
-  }
-  
-  .center-col h2 {
-    font-size: 1em;
-  }
-  
-  .text-block {
-    bottom: 10px;
-    right: 10px;
-    padding-left: 8px;
-    padding-right: 8px;
-  }
-  
-  .text-block h4 {
-    font-size: 12px;
-  }
-  
-  .text-block p {
-    font-size: 10px;
-  }
+    .header { flex-direction: column; text-align: center; }
+    .header-right { text-align: center; margin-top: 5px; }
+    .header1 { font-size: 100%; }
+    .navbar a { font-size: 11px; padding: 8px 10px; }
+    .center-col { padding: 15px; }
+    .open-form-btn { padding: 10px 20px; font-size: 1rem; }
 }
 
-@media (max-width: 360px) {
-  .navbar a {
-    font-size: 10px;
-    padding: 8px 8px;
-  }
-}
-
-/* Fix for marquee on mobile */
-@media (max-width: 768px) {
-  .header1 marquee {
-    font-size: 0.8em;
-  }
-}
-
-/* Ensure slideshow images are responsive */
-.mySlides img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  max-height: 400px;
-}
-
-/* Better touch targets for mobile */
-.navbar a,
-.dot {
-  cursor: pointer;
-}
-
-.navbar a:active {
-  background-color: #0033cc;
-}
-
-/* Fix for the slide caption text on mobile */
-@media (max-width: 600px) {
-  .text {
-    display: none;
-  }
+/* Additional beauty */
+.fa, .fa-envelope, .fa-gavel {
+    margin-right: 5px;
 }
 </style>
 </head>
 <body>
 
-<!-- Header Section -->
+<!-- Header -->
 <div class="header">
-    <img src="logo1.png" width="200" height="200" style="max-width: 120px; height: auto;" alt="Logo">
+    <img src="logo1.png" width="200" height="200" style="max-width: 120px; height: auto;" alt="MSS Logo">
     <div class="header-right">    
         <div class="header1">
-            <!-- FIXED: Slower marquee with scrollamount=2 (was too fast before) -->
-            <marquee width="100%" direction="up" style="color:#002766;" scrollamount="2" behavior="scroll" truespeed>
-                MSS's CSE Complaint System
+            <marquee width="100%" direction="up" scrollamount="2" behavior="scroll" truespeed>
+                MSS's CSE Complaint System | Fast & Secure Grievance Redressal
             </marquee>
         </div>
     </div>
 </div>
 
-<!-- Navbar - Now scrollable on mobile if needed -->
+<!-- Navbar -->
 <div class="navbar">
-    <a href="contact.html">CONTACT US</a>
-    <a href="about1.html">CALL ME</a>
-    <a href="https://www.mssjalna.org/">ABOUT US</a>
-    <a href="index.html">HOME</a>
+    <a href="contact.html"><i class="fa fa-phone"></i> CONTACT US</a>
+    <a href="about1.html"><i class="fa fa-user"></i> CALL ME</a>
+    <a href="https://www.mssjalna.org/"><i class="fa fa-university"></i> ABOUT US</a>
+    <a href="index.html"><i class="fa fa-home"></i> HOME</a>
 </div>
 
-<!-- Slideshow Container -->
+<!-- Slideshow -->
 <div class="slideshow-container">
     <div class="mySlides fade">
         <div class="numbertext">1 / 5</div>
-        <img src="slide-1.PNG" style="width:100%;" alt="Slide 1">
+        <img src="slide-1.PNG" style="width:100%;" alt="Campus View">
         <div class="text"></div>
     </div>
-
     <div class="mySlides fade">
         <div class="numbertext">2 / 5</div>
-        <img src="slide-2.PNG" style="width:100%;" alt="Slide 2">
+        <img src="slide-2.PNG" style="width:100%;" alt="Library">
     </div>
-
     <div class="mySlides fade">
         <div class="numbertext">3 / 5</div>
-        <img src="slide-3.PNG" style="width:100%;" alt="Slide 3">
+        <img src="slide-3.PNG" style="width:100%;" alt="Lab">
     </div>
-
     <div class="mySlides fade">
         <div class="numbertext">4 / 5</div>
-        <img src="slide-4.PNG" style="width:100%;" alt="Slide 4">
+        <img src="slide-4.PNG" style="width:100%;" alt="Sports">
     </div>
-
     <div class="mySlides fade">
         <div class="numbertext">5 / 5</div>
         <div class="text-block">
             <p>ANKUSH TOPE</p>
             <h4>OPEN AUDITORIUM</h4>
         </div>
-        <img src="slide-5.PNG" style="width:100%;" alt="Slide 5">
+        <img src="slide-5.PNG" style="width:100%;" alt="Auditorium">
     </div>
 </div>
 
-<!-- Dots for slideshow -->
+<!-- Dots -->
 <div style="text-align:center">
     <span class="dot"></span> 
     <span class="dot"></span> 
@@ -414,20 +444,83 @@ img {vertical-align: middle; max-width: 100%; height: auto;}
     <span class="dot"></span> 
 </div>
 
-<!-- Centered College Information Section -->
-<div class="row-centered">
-    <div class="center-col">
-        <h2>Matsyodari Shikshan Santhas's College Of Engineering & Technology</h2>
-        <p>Chhatrapari Sambhaji Nagar Road<br>
-        Dist. Jalna, Maharashtra, India<br>
-        Phone: +91 8830484254 <br>
-        E-Mail: matsyodarijalna@gmail.com<br>
+<!-- ========== BEAUTIFUL COMPLAINT BUTTON SECTION (Between slideshow and college info) ========== -->
+<div class="complaint-section">
+    <div class="complaint-btn-wrapper">
+        <button class="open-form-btn" id="openComplaintModalBtn">
+            <i class="fa fa-exclamation-triangle"></i> FILE A COMPLAINT NOW
+            <i class="fa fa-gavel"></i>
+        </button>
+        <p style="margin-top: 12px; color: #2c3e66; font-size: 0.85rem;">
+            <i class="fa fa-shield"></i> Anonymous & Secure | Direct Email to Concerned Department
         </p>
     </div>
 </div>
 
-<!-- Slideshow JavaScript -->
+<!-- ========== MODAL POPUP FOR COMPLAINT FORM (Fully Integrated) ========== -->
+<div id="complaintModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3><i class="fa fa-edit"></i> Lodge Your Complaint</h3>
+            <button class="close-modal" id="closeModalBtn">&times;</button>
+        </div>
+        <div class="complaint-form">
+            <form id="complaintFormElement">
+                <div class="form-group">
+                    <label><i class="fa fa-user-circle"></i> Full Name *</label>
+                    <input type="text" id="studentName" placeholder="e.g. Aniket Patil" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fa fa-envelope"></i> Email Address *</label>
+                    <input type="email" id="studentEmail" placeholder="you@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fa fa-phone"></i> Mobile Number *</label>
+                    <input type="tel" id="studentPhone" placeholder="9876543210" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fa fa-list"></i> Complaint Type *</label>
+                    <select id="complaintType" required>
+                        <option value="">-- Select Category --</option>
+                        <option value="Fighting Complaint">⚔️ Fighting / Violence Complaint</option>
+                        <option value="Ragging Complaint">🚫 Ragging / Harassment Complaint</option>
+                        <option value="Lab/Computer Related">💻 Lab / Computer Related Issue</option>
+                        <option value="Class Related">📚 Class Related (Furniture/Teaching/Attendance)</option>
+                        <option value="Other">🔧 Other (Please Specify Below)</option>
+                    </select>
+                </div>
+                <div class="form-group" id="otherComplaintGroup" style="display: none;">
+                    <label><i class="fa fa-pencil-square-o"></i> Specify Your Complaint Type</label>
+                    <input type="text" id="otherComplaintText" placeholder="e.g., Canteen issue, Hostel problem...">
+                </div>
+                <div class="form-group">
+                    <label><i class="fa fa-file-text"></i> Detailed Description *</label>
+                    <textarea id="complaintDesc" placeholder="Describe the incident in detail. Include date, time, location, and involved persons if any..." required></textarea>
+                </div>
+                <button type="submit" class="submit-complaint">
+                    <i class="fa fa-paper-plane"></i> SUBMIT COMPLAINT VIA EMAIL
+                </button>
+                <div class="form-note">
+                    <i class="fa fa-info-circle"></i> Your complaint will open in your default email app (Gmail/Outlook/Apple Mail) with all details pre-filled. Just tap SEND. No extra typing needed.
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Centered College Info (shifted to bottom) -->
+<div class="row-centered">
+    <div class="center-col">
+        <h2><i class="fa fa-graduation-cap"></i> Matsyodari Shikshan Sanstha's College Of Engineering & Technology</h2>
+        <p><i class="fa fa-map-marker"></i> Chhatrapati Sambhaji Nagar Road, Jalna, Maharashtra, India<br>
+        <i class="fa fa-phone"></i> Phone: +91 8830484254 <br>
+        <i class="fa fa-envelope"></i> E-Mail: matsyodarijalna@gmail.com<br>
+        <i class="fa fa-clock-o"></i> Mon - Sat: 9:00 AM to 5:00 PM</p>
+    </div>
+</div>
+
 <script>
+// Slideshow logic
 var slideIndex = 0;
 showSlides();
 
@@ -445,9 +538,162 @@ function showSlides() {
   }
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
-  setTimeout(showSlides, 2000);
+  setTimeout(showSlides, 3000); // 3 seconds for better UX
 }
+
+// ========== COMPLAINT MODAL & EMAIL INTEGRATION ==========
+const modal = document.getElementById('complaintModal');
+const openBtn = document.getElementById('openComplaintModalBtn');
+const closeBtn = document.getElementById('closeModalBtn');
+
+// Open modal
+openBtn.onclick = function() {
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+// Close modal
+closeBtn.onclick = function() {
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// Click outside to close
+window.onclick = function(event) {
+    if (event.target === modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+}
+
+// Show/Hide "other complaint" input based on selection
+const complaintTypeSelect = document.getElementById('complaintType');
+const otherGroup = document.getElementById('otherComplaintGroup');
+
+complaintTypeSelect.addEventListener('change', function() {
+    if (this.value === 'Other') {
+        otherGroup.style.display = 'block';
+    } else {
+        otherGroup.style.display = 'none';
+        document.getElementById('otherComplaintText').value = '';
+    }
+});
+
+// Handle form submission (Mailto method - platform independent)
+document.getElementById('complaintFormElement').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Collect data
+    const studentName = document.getElementById('studentName').value.trim();
+    const studentEmail = document.getElementById('studentEmail').value.trim();
+    const studentPhone = document.getElementById('studentPhone').value.trim();
+    let complaintType = complaintTypeSelect.value;
+    const otherText = document.getElementById('otherComplaintText').value.trim();
+    const complaintDesc = document.getElementById('complaintDesc').value.trim();
+    
+    // Validation
+    if (!studentName || !studentEmail || !studentPhone || !complaintType || !complaintDesc) {
+        alert('❌ Please fill all required fields (Name, Email, Phone, Complaint Type, Description)');
+        return;
+    }
+    
+    if (!studentEmail.includes('@') || !studentEmail.includes('.')) {
+        alert('❌ Please enter a valid email address');
+        return;
+    }
+    
+    if (!/^\d{10}$/.test(studentPhone)) {
+        alert('❌ Please enter a valid 10-digit mobile number');
+        return;
+    }
+    
+    // If 'Other' is selected and user typed custom type, use that
+    let finalComplaintType = complaintType;
+    if (complaintType === 'Other' && otherText !== '') {
+        finalComplaintType = `Other: ${otherText}`;
+    } else if (complaintType === 'Other' && otherText === '') {
+        alert('❌ Please specify your complaint type in the "Other" field');
+        return;
+    }
+    
+    // Generate unique Complaint ID and timestamp
+    const complaintId = 'MSS' + Date.now() + Math.floor(Math.random() * 1000);
+    const now = new Date();
+    const timestamp = now.toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', dateStyle: 'full', timeStyle: 'long' });
+    
+    // Target email (same as given in website - your college email)
+    const targetEmail = "matsyodarijalna@gmail.com";  // complaint receiving email
+    
+    // Prepare beautiful email subject
+    const subject = `[COMPLAINT] ${finalComplaintType} - ${studentName} (ID: ${complaintId})`;
+    
+    // Prepare detailed email body (auto-filled, no typing needed on user side)
+    const emailBody = `
+===========================================================
+          📢 OFFICIAL COMPLAINT SUBMISSION
+            MSS CSE COMPLAINT MANAGEMENT SYSTEM
+===========================================================
+
+🔵 COMPLAINT ID: ${complaintId}
+📅 DATE & TIME: ${timestamp}
+🏷️ COMPLAINT CATEGORY: ${finalComplaintType}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+👤 COMPLAINANT DETAILS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Full Name      : ${studentName}
+• Email Address  : ${studentEmail}
+• Mobile Number  : ${studentPhone}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📝 COMPLAINT DESCRIPTION:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+${complaintDesc}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⚠️ IMPORTANT GUIDELINES:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• This complaint is registered via online portal.
+• Concerned authorities will review within 48 hours.
+• Please keep your Complaint ID: ${complaintId} for future reference.
+• For any follow-up, quote this ID.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+This is a system-generated complaint from MSS's Official Website.
+Do not reply to this email directly if you are the complainant.
+The admin will contact you on provided email/phone.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    `.trim();
+    
+    // Encode for mailto
+    const encodedSubject = encodeURIComponent(subject);
+    const encodedBody = encodeURIComponent(emailBody);
+    
+    // Create mailto link with all details pre-filled
+    const mailtoLink = `mailto:${targetEmail}?subject=${encodedSubject}&body=${encodedBody}`;
+    
+    // Open default email client (Gmail / Apple Mail / Outlook etc.) - works on ALL platforms
+    window.location.href = mailtoLink;
+    
+    // Show success dialog and reset form
+    alert(`✅ Complaint prepared successfully!\n\nComplaint ID: ${complaintId}\n\nYour email app will open now.\n👉 Just review and tap SEND. No extra typing needed.\n\nWe value your feedback.`);
+    
+    // Reset form & close modal
+    document.getElementById('complaintFormElement').reset();
+    otherGroup.style.display = 'none';
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+});
 </script>
 
+<!-- Additional enhancements: automatic close on escape key -->
+<script>
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape' && modal.style.display === 'flex') {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+});
+</script>
 </body>
 </html>

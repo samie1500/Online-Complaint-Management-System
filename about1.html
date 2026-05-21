@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #ccf2ff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Card Styles */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 100%;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+/* Button Styles */
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+/* Row and Column - RESPONSIVE */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 100%;
+  padding: 15px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+/* Shake animation on hover/touch */
+img:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+img:active {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+
+/* Card image responsive */
+.card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Card content styling */
+.card h1 {
+  font-size: 1.2em;
+  margin: 15px 0 5px;
+  word-wrap: break-word;
+}
+
+.card .title {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+/* Page heading */
+h1 u {
+  text-decoration: underline;
+}
+
+/* Responsive Breakpoints */
+@media (min-width: 768px) {
+  .column {
+    width: 33.33%;
+  }
+  
+  .card h1 {
+    font-size: 1.1em;
+  }
+}
+
+@media (min-width: 1024px) {
+  .column {
+    width: 20%;  /* 5 columns on large screens */
+  }
+  
+  .card h1 {
+    font-size: 1em;
+  }
+}
+
+/* Tablet view (2 columns) */
+@media (min-width: 481px) and (max-width: 767px) {
+  .column {
+    width: 50%;
+  }
+  
+  .card h1 {
+    font-size: 1em;
+  }
+  
+  .title {
+    font-size: 14px;
+  }
+}
+
+/* Mobile view (1 column) */
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+  
+  .column {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+  
+  h1 u {
+    font-size: 32px;
+  }
+  
+  .card h1 {
+    font-size: 1.1em;
+  }
+  
+  .title {
+    font-size: 14px;
+  }
+  
+  .card {
+    max-width: 100%;
+  }
+  
+  /* Adjust heading size for mobile */
+  h1[style*="text-align:center"] {
+    font-size: 40px !important;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 360px) {
+  h1 u {
+    font-size: 28px;
+  }
+  
+  .card h1 {
+    font-size: 1em;
+  }
+  
+  .title {
+    font-size: 12px;
+  }
+  
+  .column {
+    padding: 8px;
+  }
+}
+
+/* Better touch targets for cards */
+.card {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Improved card styling for mobile */
+@media (max-width: 768px) {
+  .card {
+    margin: 0 auto;
+  }
+  
+  .card img {
+    max-height: 200px;
+    object-fit: cover;
+  }
+  
+  button {
+    padding: 12px;
+    font-size: 16px;
+  }
+}
+
+/* Add smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Fix for long names on mobile */
+.card h1 u {
+  word-break: break-word;
+  display: inline-block;
+  max-width: 100%;
+}
+
+/* Center the heading properly */
+.heading-main {
+  text-align: center;
+  color: black;
+  font-family: Algerian, cursive;
+  font-size: 60px;
+  margin: 20px 0;
+  padding: 0 15px;
+  word-wrap: break-word;
+}
+
+/* Responsive heading */
+@media (max-width: 768px) {
+  .heading-main {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading-main {
+    font-size: 32px;
+  }
+}
+
+/* Phone number styling */
+.title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #0066cc;
+}
+
+/* Optional: Add call button on hover for desktop */
+@media (min-width: 768px) {
+  .card:hover .call-btn {
+    display: block;
+  }
+}
+</style>
+</head>
+<body>
+
+<h1 class="heading-main"><u>Call Us Anytime</u></h1>
+
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="avatar1.png" alt="Mr. Sandeep Gite" style="width:100%">
+      <h1><u>Mr. Sandeep Gite</u></h1>
+      <p class="title">9921797404</p>
+      <div style="margin: 24px 0; color: blue;">
+        <b>HOD of CSE Department</b>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="avatar1.png" alt="Mr. G. P. Chakote" style="width:100%">
+      <h1><u>Mr. G. P. Chakote</u></h1>
+      <p class="title">9860809119</p>
+      <div style="margin: 24px 0; color: blue;">
+        <b>Faculty</b>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="avatar2.png" alt="Mrs. S Wagwase" style="width:100%">
+      <h1><u>Mrs. S Wagwase</u></h1>
+      <p class="title">7972610327</p>
+      <div style="margin: 24px 0; color: blue;">
+        <b>Faculty</b>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="avatar1.png" alt="Mr. Rohit Khalse" style="width:100%">
+      <h1><u>Mr. Rohit Khalse</u></h1>
+      <p class="title">9561862866</p>
+      <div style="margin: 24px 0; color: blue;">
+        <b>Faculty</b>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="avatar1.png" alt="Mr. K. Patole" style="width:100%">
+      <h1><u>Mr. K. Patole</u></h1>
+      <p class="title">9923157237</p>
+      <div style="margin: 24px 0; color: blue;">
+        <b>Peon</b>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

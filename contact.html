@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<style>
+
+* {box-sizing: border-box;}
+body { 
+   background-repeat: no-repeat; 
+   height: 100%;
+   background-size: cover;
+   background-position: center;  
+   margin: 0;
+   padding: 0;
+   font-family: Arial, Helvetica, sans-serif;
+   background-color: black;
+}
+
+/* NAVBAR - Mobile Friendly */
+.navbar {
+    overflow-x: auto;
+    overflow-y: hidden;
+    background-color: #001b66;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+
+.navbar a {
+    font-size: 14px;
+    color: white;
+    text-align: center;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: inline-block;
+    float: none;
+}
+
+.navbar a:hover {
+    background-color: #0033cc;
+    color: white;
+}
+
+.navbar a:active {
+    background-color: #0033cc;
+}
+
+/* HEADER - Mobile Friendly */
+.header {
+  overflow: hidden;
+  background-color: #ffdb4d;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header img {
+  max-width: 120px;
+  height: auto;
+}
+
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.header a:hover {
+  background-color: white;
+  color: black;
+}
+
+.header a.active {
+  background-color: white;
+  color: white;
+}
+
+.header-right {
+  flex: 1;
+  text-align: right;
+}
+
+.header1 {
+  font-size: 180%;
+  font-family: comic sans ms;
+}
+
+.header1 marquee {
+  font-size: 0.9em;
+}
+
+/* Text block */
+.text-block {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  background-color: black;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Three column layout - responsive */
+.column {
+  float: left;
+  width: 100%;
+  padding: 10px;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  .column {
+    width: 33.33%;
+    height: 300px;
+  }
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Glow text effect - responsive */
+.glow {
+  font-size: 50px;
+  color: #fff;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+  margin: 20px 0;
+  word-wrap: break-word;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #e60073, 0 0 20px #e60073, 0 0 25px #e60073, 0 0 30px #e60073, 0 0 35px #e60073;
+  }
+  to {
+    text-shadow: 0 0 10px #fff, 0 0 15px #ff4da6, 0 0 20px #ff4da6, 0 0 25px #ff4da6, 0 0 30px #ff4da6, 0 0 35px #ff4da6, 0 0 40px #ff4da6;
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #e60073, 0 0 20px #e60073, 0 0 25px #e60073, 0 0 30px #e60073, 0 0 35px #e60073;
+  }
+  to {
+    text-shadow: 0 0 10px #fff, 0 0 15px #ff4da6, 0 0 20px #ff4da6, 0 0 25px #ff4da6, 0 0 30px #ff4da6, 0 0 35px #ff4da6, 0 0 40px #ff4da6;
+  }
+}
+
+mySlides {display: none;}
+
+/* Make images responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Center the image properly */
+.contact-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 90%;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Fix marquee styling */
+.marquee-red {
+  color: red;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 20px auto;
+  width: 90%;
+  background-color: rgba(0,0,0,0.5);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Headings and text responsive */
+h2 {
+  font-size: 1.3em;
+  padding: 0 15px;
+  word-wrap: break-word;
+}
+
+p {
+  font-size: 0.95em;
+  padding: 0 20px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .glow {
+    font-size: 40px;
+  }
+  
+  .navbar a {
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+  
+  .header1 {
+    font-size: 140%;
+  }
+  
+  h2 {
+    font-size: 1.1em;
+  }
+  
+  p {
+    font-size: 0.85em;
+    padding: 0 15px;
+  }
+  
+  .marquee-red {
+    font-size: 14px;
+    width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .header-right {
+    text-align: center;
+    margin-top: 5px;
+  }
+  
+  .header1 {
+    font-size: 110%;
+  }
+  
+  .glow {
+    font-size: 32px;
+  }
+  
+  .navbar a {
+    font-size: 11px;
+    padding: 8px 10px;
+  }
+  
+  h2 {
+    font-size: 1em;
+  }
+  
+  p {
+    font-size: 0.8em;
+    line-height: 1.4;
+  }
+  
+  .contact-img {
+    max-width: 95%;
+  }
+  
+  .marquee-red {
+    font-size: 12px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 360px) {
+  .glow {
+    font-size: 28px;
+  }
+  
+  .navbar a {
+    font-size: 10px;
+    padding: 8px 8px;
+  }
+  
+  h2 {
+    font-size: 0.9em;
+  }
+}
+
+/* Better touch targets */
+.navbar a {
+  cursor: pointer;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Ensure marquee works well on mobile */
+@media (max-width: 768px) {
+  .header1 marquee {
+    width: 100% !important;
+    font-size: 0.8em;
+  }
+}
+
+/* Fix for contact image on different screen sizes */
+@media (min-width: 1200px) {
+  .contact-img {
+    max-width: 560px;
+  }
+}
+
+@media (max-width: 1199px) and (min-width: 769px) {
+  .contact-img {
+    max-width: 500px;
+  }
+}
+
+/* Smooth scrolling for better mobile experience */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Better text contrast on mobile */
+@media (max-width: 768px) {
+  body {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+    <img src="logo1.png" width="200" height="200" alt="Logo">
+    <div class="header-right">    
+        <div class="header1">
+            <marquee width="100%" direction="up" style="color:#000966;">
+                MSS's CSE Complaint System
+            </marquee>
+        </div>
+    </div>
+</div>
+
+<!-- NAVBAR - Mobile friendly with horizontal scroll if needed -->
+<div class="navbar">
+    <a href="contact.html">CONTACT US</a>
+    <a href="about1.html">ABOUT US</a>
+    <a href="index.html">HOME</a>
+</div>
+
+<h1 class="glow">CONTACT</h1>
+
+<!-- Centered responsive image -->
+<img src="slide-3.PNG" width="560" height="450" class="contact-img" alt="Campus Image">
+
+<h2 style="font-family:verdana;color:white;text-align:center;">MSS's College Of Engineering & Technology</h2>
+
+<p style="font-family:verdana;color:white; text-align:center;">
+    Chh. SambhajiNagar Road<br>
+    Dist. Jalna, Maharashtra, India<br>
+    Phone: +91 883 048 4254<br>
+    E-Mail: matsyodarijalna@gmail.com<br>
+</p>
+
+<marquee width="90%" direction="left" class="marquee-red" behavior="scroll" scrollamount="3">
+    COMPLAINTS WILL ONLY BE REGISTERED ONLINE.
+</marquee>
+
+</body>
+</html>

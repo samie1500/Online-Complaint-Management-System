@@ -99,8 +99,9 @@ body {
   font-family: comic sans ms;
 }
 
+/* FIXED MARQUEE - Slower and readable */
 .header1 marquee {
-  font-size: 0.9em;
+  width: 100% !important;
 }
 
 /* Text block */
@@ -184,7 +185,7 @@ img {
   border-radius: 10px;
 }
 
-/* Fix marquee styling */
+/* Fix marquee styling - SLOWER */
 .marquee-red {
   color: red;
   font-size: 16px;
@@ -309,7 +310,6 @@ p {
 /* Ensure marquee works well on mobile */
 @media (max-width: 768px) {
   .header1 marquee {
-    width: 100% !important;
     font-size: 0.8em;
   }
 }
@@ -346,7 +346,8 @@ html {
     <img src="logo1.png" width="200" height="200" alt="Logo">
     <div class="header-right">    
         <div class="header1">
-            <marquee width="100%" direction="up" style="color:#000966;">
+            <!-- FIXED: Slower marquee with scrollamount=2 -->
+            <marquee width="100%" direction="up" style="color:#000966;" scrollamount="2" behavior="scroll" truespeed>
                 MSS's CSE Complaint System
             </marquee>
         </div>
@@ -374,7 +375,8 @@ html {
     E-Mail: matsyodarijalna@gmail.com<br>
 </p>
 
-<marquee width="90%" direction="left" class="marquee-red" behavior="scroll" scrollamount="3">
+<!-- FIXED: Slower marquee with scrollamount=2 -->
+<marquee width="90%" direction="left" class="marquee-red" behavior="scroll" scrollamount="2" truespeed>
     COMPLAINTS WILL ONLY BE REGISTERED ONLINE.
 </marquee>
 

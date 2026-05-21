@@ -145,8 +145,10 @@ img {vertical-align: middle; max-width: 100%; height: auto;}
   font-family: comic sans ms;
 }
 
+/* FIXED MARQUEE - Slower and readable */
 .header1 marquee {
-  font-size: 0.9em;
+  width: 100% !important;
+  white-space: nowrap;
 }
 
 /* Text block for slide */
@@ -317,7 +319,6 @@ img {vertical-align: middle; max-width: 100%; height: auto;}
 /* Fix for marquee on mobile */
 @media (max-width: 768px) {
   .header1 marquee {
-    width: 100% !important;
     font-size: 0.8em;
   }
 }
@@ -355,7 +356,8 @@ img {vertical-align: middle; max-width: 100%; height: auto;}
     <img src="logo1.png" width="200" height="200" style="max-width: 120px; height: auto;" alt="Logo">
     <div class="header-right">    
         <div class="header1">
-            <marquee width="100%" direction="UP" style="color:#002766;">
+            <!-- FIXED: Slower marquee with scrollamount=2 (was too fast before) -->
+            <marquee width="100%" direction="up" style="color:#002766;" scrollamount="2" behavior="scroll" truespeed>
                 MSS's CSE Complaint System
             </marquee>
         </div>
